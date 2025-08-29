@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_APP_URL": "https://your-vercel-app.vercel.app",
+    "POSTGRES_URL": "@postgres_url",
+    "JWT_SECRET": "@jwt_secret",
+    "STRIPE_SECRET_KEY": "@stripe_secret_key",
+    "STRIPE_PUBLIC_KEY": "@stripe_public_key"
+  },
+  "buildCommand": "pnpm install && pnpm run build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs"
+}
