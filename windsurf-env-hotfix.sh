@@ -1,5 +1,15 @@
-chmod +x windsurf-env-hotfix.sh
-POSTGRES_URL=postgres://USER:PASSWORD@HOST:PORT/DATABASE
-NEXT_PUBLIC_API_URL=https://api.example.com
-ANOTHER_ENV_VAR=value
-./windsurf-env-hotfix.sh
+#!/bin/bash
+
+# This script applies a hotfix to the windsurf environment
+
+# Check if the user has root privileges
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Apply the hotfix
+echo "Applying windsurf environment hotfix..."
+sed -i 's/old_config/new_config/g' /path/to/config/file
+
+echo "Hotfix applied successfully"
